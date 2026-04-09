@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 680 680" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Wordline icon – dark</title>
+  <rect width="680" height="680" fill="#1a1a1a" rx="120"/>
+  <g transform="translate(140, 200)">
+    <path d="
+      M 0,0 L 50,0 L 140,210 L 190,100
+      L 210,100 L 260,210 L 350,0
+      L 400,0 L 280,280 L 230,280
+      L 200,210 L 170,280 L 120,280 Z
+    " fill="white"/>
+    <rect x="100" y="14" width="58" height="58" rx="10" fill="#4a9e5c"/>
+    <rect x="171" y="14" width="58" height="58" rx="10" fill="#e0a830"/>
+    <rect x="242" y="14" width="58" height="58" rx="10" fill="#8a8a8a"/>
+  </g>
+</svg>
