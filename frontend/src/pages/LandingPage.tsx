@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { NeonButton } from '../components/NeonButton'
 import { NeonBox } from '../components/NeonBox'
+import { APP_NAME } from '../constants/config'
 
 export default function LandingPage() {
   const [nickname, setNickname] = useState('')
@@ -29,7 +30,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="rainbow-title mb-12">WordLine</h1>
+      <h1 className="rainbow-title mb-12">{APP_NAME}</h1>
       
       <NeonBox color="blue" className="w-full max-w-md p-8">
         <div className="flex flex-col gap-6">

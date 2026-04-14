@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from wordline.health import health_router
 from wordline.rooms import rooms_router
 
-app = FastAPI(title="Wordline API", version="1.0.0")
+app = FastAPI(title="WordLine API", version="1.0.0")
 
 # Configure CORS
 app.add_middleware(

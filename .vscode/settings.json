@@ -15,14 +15,13 @@
     // --- Formatting & Linting ---
     // Use specific formatters for each language
     "[python]": {
-      "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.formatOnSave": true,
     },
     "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true
     },
     // --- Terminal ---
     // Default to bash/zsh, but you can set up tasks to cd automatically
-    "terminal.integrated.cwd": "${workspaceFolder}"
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "css.lint.unknownAtRules": "ignore"
   }
