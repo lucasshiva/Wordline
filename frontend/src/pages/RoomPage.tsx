@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Plus, Settings, Users } from 'lucide-react'
+import { Plus, Settings, Users, Trash2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PlayerBoard } from '../components/PlayerBoard'
 import { Keyboard } from '../components/Keyboard'
@@ -12,8 +12,14 @@ export default function RoomPage() {
   const addPlayer = () => {
     if (players.length < 4) {
       const colors = ['#22c55e', '#eab308', '#06b6d4', '#ec4899']
-      const nextId = players.length + 1
+      const nextId = Math.max(...players.map(p => p.id), 0) + 1
       setPlayers([...players, { id: nextId, color: colors[players.length] }])
+    }
+  }
+
+  const removePlayer = (id: number) => {
+    if (players.length > 1) {
+      setPlayers(players.filter(p => p.id !== id))
     }
   }
 
@@ -78,9 +84,18 @@ export default function RoomPage() {
             
             <div className="space-y-3">
               {players.map((p) => (
-                <div key={p.id} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
+                <div key={p.id} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 group">
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color, boxShadow: `0 0 10px ${p.color}` }} />
-                  <span className="text-sm font-medium">Player {p.id}</span>
+                  <span className="text-sm font-medium flex-1">Player {p.id}</span>
+                  {players.length > 1 && (
+                    <button 
+                      onClick={() => removePlayer(p.id)}
+                      className="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-red-500/20 hover:text-red-500 rounded-lg transition-all"
+                      title="Remove Player"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  )}
                 </div>
               ))}
               
