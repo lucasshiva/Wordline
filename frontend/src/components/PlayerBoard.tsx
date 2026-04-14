@@ -8,32 +8,35 @@ interface PlayerBoardProps {
 export const PlayerBoard = ({ playerNumber, color }: PlayerBoardProps) => {
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="glass-morphism rounded-[2rem] p-6 min-w-[300px]"
-      style={{ 
-        boxShadow: `0 0 20px color-mix(in srgb, ${color}, transparent 80%)`, 
-        borderColor: color,
-        borderWidth: '1px',
-        borderStyle: 'solid'
-      }}
+      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.9, y: 10 }}
+      className="relative"
     >
-      <div className="flex justify-between mb-4">
-        <span className="text-xs font-bold tracking-widest uppercase" style={{ color }}>
-          Player {playerNumber}
-        </span>
-      </div>
-      
-      {/* Grid de Letras - 5x6 */}
-      <div className="grid grid-cols-5 gap-2">
-        {Array.from({ length: 30 }).map((_, i) => (
-          <div 
-            key={i} 
-            className="aspect-square rounded-lg border border-white/10 bg-white/5 flex items-center justify-center text-2xl font-bold text-white"
-          >
-            {/* Letra aqui */}
-          </div>
-        ))}
+      <div 
+        className="glass-morphism w-[320px] rounded-[2.5rem] p-8 border-t-2 transition-all duration-500"
+        style={{ 
+          borderColor: `color-mix(in srgb, ${color}, transparent 75%)`,
+          boxShadow: `0 20px 40px -20px color-mix(in srgb, ${color}, transparent 85%)` 
+        }}
+      >
+        <div className="flex justify-between items-center mb-6">
+           <span className="text-[10px] font-black uppercase tracking-[0.3em]" style={{ color }}>
+             Player 0{playerNumber}
+           </span>
+        </div>
+        
+        {/* Grid de Letras Placeholder */}
+        <div className="grid grid-cols-5 gap-3">
+          {Array.from({ length: 30 }).map((_, i) => (
+            <div 
+              key={i} 
+              className="aspect-square rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center text-xl font-bold text-white/20"
+            >
+              -
+            </div>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
