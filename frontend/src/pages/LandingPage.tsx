@@ -29,19 +29,19 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <h1 className="rainbow-title mb-12">{APP_NAME}</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-bg-dark">
+      <h1 className="rainbow-title mb-12 drop-shadow-2xl">{APP_NAME}</h1>
       
       <NeonBox color="blue" className="w-full max-w-md p-8">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <label className="text-sm font-bold tracking-widest text-white-50 uppercase">Nickname</label>
+            <label className="text-[10px] font-black tracking-[0.3em] text-white/40 uppercase">Nickname</label>
             <input
               type="text"
               value={nickname}
               onChange={(e) => setNickname(e.target.value)}
-              placeholder="Enter your name..."
-              className="bg-white-5 border-2 border-neon-blue/30 rounded-xl px-6 py-4 text-white outline-none focus:border-neon-blue transition-all text-xl"
+              placeholder="ENTER YOUR NAME..."
+              className="bg-white/5 border border-neon-blue/20 rounded-xl px-6 py-4 text-white outline-none focus:border-neon-blue/60 transition-all text-xl font-black placeholder:text-white/10"
             />
           </div>
           
@@ -49,21 +49,29 @@ export default function LandingPage() {
             color="blue"
             onClick={handleCreateRoom}
             disabled={!nickname || loading}
-            className="w-full py-4 text-xl"
+            className="w-full py-6 text-xl"
           >
-            {loading ? 'Connecting...' : 'Create Game'}
+            {loading ? 'CONNECTING...' : 'CREATE GAME'}
           </NeonButton>
           
-          <div className="text-center text-xs text-white/30 uppercase tracking-[0.3em] font-medium">
+          <div className="text-center text-[10px] text-white/20 uppercase tracking-[0.4em] font-black">
             Join the word world
           </div>
         </div>
       </NeonBox>
       
       <div className="mt-12 flex gap-4">
-        <div className="w-2 h-2 rounded-full bg-neon-blue animate-pulse"></div>
-        <div className="w-2 h-2 rounded-full bg-neon-green animate-pulse delay-75"></div>
-        <div className="w-2 h-2 rounded-full bg-neon-pink animate-pulse delay-150"></div>
+        {['neon-blue', 'neon-green', 'neon-pink'].map((color, i) => (
+          <div 
+            key={color}
+            className={`w-1.5 h-1.5 rounded-full animate-pulse-slow`}
+            style={{ 
+              backgroundColor: `var(--color-${color})`,
+              boxShadow: `0 0 10px var(--color-${color})`,
+              animationDelay: `${i * 150}ms`
+            }}
+          />
+        ))}
       </div>
     </div>
   )
