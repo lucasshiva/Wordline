@@ -24,5 +24,7 @@
     },
     // --- Terminal ---
     // Default to bash/zsh, but you can set up tasks to cd automatically
-    "terminal.integrated.cwd": "${workspaceFolder}"
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    // Tailwind Intellisense Config
+    "tailwindCSS.experimental.configFile": "frontend/src/index.css"
   }
