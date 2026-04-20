@@ -23,11 +23,11 @@ export default function LanguageSwitcher({ size = 'md' }: LanguageSwitcherProps)
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        backgroundColor: 'oklch(18% 0.0126 255.48)',
+        backgroundColor: 'var(--default)',
         borderRadius: '9999px',
         padding: isSmall ? '3px' : '4px',
         gap: isSmall ? '2px' : '3px',
-        border: '1px solid oklch(30% 0.0126 255.48)',
+        border: '1px solid var(--border)',
       }}
     >
       <LangOption
@@ -82,13 +82,13 @@ function LangOption({ lang, flag, label, isActive, isSmall, onClick }: LangOptio
         letterSpacing: '0.04em',
         transition: 'background-color 180ms ease, color 180ms ease',
         backgroundColor: isActive
-          ? 'oklch(28% 0.0189 255.48)'
+          ? 'var(--background)'
           : 'transparent',
         color: isActive
-          ? 'oklch(99% 0.0126 255.48)'
-          : 'oklch(60% 0.0252 255.48)',
+          ? 'var(--foreground)'
+          : 'var(--muted)',
         boxShadow: isActive
-          ? '0 1px 3px oklch(0% 0 0 / 40%)'
+          ? '0 1px 2px rgba(0,0,0,0.2)'
           : 'none',
       }}
     >
