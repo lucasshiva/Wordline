@@ -1,0 +1,31 @@
+{
+  "landing": {
+    "header": {
+      "subtitle": "A real-time, competitive word-guessing game with multiplayer features. Inspired by",
+      "and": "and"
+    },
+    "playAlone": {
+      "title": "Play Alone",
+      "description": "Classic Wordle experience. Play unlimited random words at your own pace.",
+      "button": "Play"
+    },
+    "joinRoom": {
+      "title": "Join Room",
+      "description": "Play with friends in real time. Compete to see who can guess the secret word first.",
+      "button": "Join"
+    },
+    "hostRoom": {
+      "title": "Host Room",
+      "description": "Create a room and invite friends. Start a multiplayer match and see who solves it first.",
+      "button": "Host"
+    },
+    "comingSoon": "Coming soon..",
+    "footer": {
+      "builtBy": "Built by",
+      "viewSource": "View source"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  }
+}

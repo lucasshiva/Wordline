@@ -1,41 +1,48 @@
-import { IconDoor, IconUser, IconUsers } from "@tabler/icons-react";
-import LandingFooter from "./LandingFooter";
-import LandingHeader from "./LandingHeader";
-import LandingLobbyOption from "./LandingLobbyOption";
+import { useTranslation } from 'react-i18next';
+import { IconDoor, IconUser, IconUsers } from '@tabler/icons-react';
+import LanguageSwitcher from '../../components/LanguageSwitcher';
+import LandingFooter from './LandingFooter';
+import LandingHeader from './LandingHeader';
+import LandingLobbyOption from './LandingLobbyOption';
 
 export default function LandingPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      {/* Language toggle — fixed top-right corner */}
+      <div style={{ position: 'fixed', top: '16px', right: '20px', zIndex: 50 }}>
+        <LanguageSwitcher size="md" />
+      </div>
+
       <main className="flex flex-1 flex-col items-center justify-center gap-12 p-8">
         <LandingHeader />
 
-        {/* Mode selection */}
         <div className="flex flex-col gap-6 sm:gap-8 w-full">
-          {/* Mode selection options. Maybe move this to its own components? */}
           <div className="flex flex-col md:flex-row gap-4 items-start justify-center">
             <LandingLobbyOption
               icon={IconUser}
-              title="Play Alone"
-              description="Classic Wordle experience. Play unlimited random words at your own pace."
-              buttonText="Play"
+              title={t('landing.playAlone.title')}
+              description={t('landing.playAlone.description')}
+              buttonText={t('landing.playAlone.button')}
               cardColor="accent"
               comingSoon
             />
 
             <LandingLobbyOption
               icon={IconUsers}
-              title="Join Room"
-              description="Play with friends in real time. Compete to see who can guess the secret word first."
-              buttonText="Join"
+              title={t('landing.joinRoom.title')}
+              description={t('landing.joinRoom.description')}
+              buttonText={t('landing.joinRoom.button')}
               cardColor="success"
               comingSoon
             />
 
             <LandingLobbyOption
               icon={IconDoor}
-              title="Host Room"
-              description="Create a room and invite friends. Start a multiplayer match and see who solves it first."
-              buttonText="Host"
+              title={t('landing.hostRoom.title')}
+              description={t('landing.hostRoom.description')}
+              buttonText={t('landing.hostRoom.button')}
               cardColor="warning"
               comingSoon
             />
@@ -43,7 +50,6 @@ export default function LandingPage() {
         </div>
       </main>
 
-      {/* Footer */}
       <LandingFooter />
     </div>
   );

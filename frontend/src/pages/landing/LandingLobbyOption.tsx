@@ -1,8 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { Button, Card } from "@heroui/react";
-import type { LucideIcon } from "lucide-react";
+import type { Icon } from "@tabler/icons-react";
 
 interface LandingLobbyOptionProps {
-  icon: LucideIcon;
+  icon: Icon;
   title: string;
   description: string;
   buttonText: string;
@@ -18,6 +19,7 @@ export default function LandingLobbyOption({
   buttonText,
   comingSoon,
 }: LandingLobbyOptionProps) {
+  const { t } = useTranslation();
   // Convert to uppercase so that we can use it as a component
   const Icon = icon;
 
@@ -73,7 +75,7 @@ export default function LandingLobbyOption({
         </Card.Footer>
       </Card>
 
-      {comingSoon && <p className="text-muted">Coming soon..</p>}
+      {comingSoon && <p className="text-muted">{t('landing.comingSoon')}</p>}
     </div>
   );
 }
