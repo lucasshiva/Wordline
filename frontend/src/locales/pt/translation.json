@@ -1,7 +1,8 @@
 {
   "landing": {
     "header": {
-      "subtitle": "Um jogo competitivo de adivinhar palavras em tempo real com recursos multijogador. Inspirado em"
+      "subtitle": "Um jogo competitivo de adivinhar palavras em tempo real com recursos multijogador. Inspirado em",
+      "and": "e"
     },
     "playAlone": {
       "title": "Jogar Sozinho",

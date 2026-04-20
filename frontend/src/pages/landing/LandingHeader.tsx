@@ -20,7 +20,7 @@ export default function LandingHeader() {
         >
           Wordle
         </a>{' '}
-        and{' '}
+        {t('landing.header.and')}{' '}
         <a
           className="text-accent underline hover:opacity-65"
           href="https://term.ooo/"

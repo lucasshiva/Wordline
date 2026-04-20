@@ -1,7 +1,8 @@
 {
   "landing": {
     "header": {
-      "subtitle": "A real-time, competitive word-guessing game with multiplayer features. Inspired by"
+      "subtitle": "A real-time, competitive word-guessing game with multiplayer features. Inspired by",
+      "and": "and"
     },
     "playAlone": {
       "title": "Play Alone",
