@@ -1,0 +1,30 @@
+{
+  "landing": {
+    "header": {
+      "subtitle": "Um jogo competitivo de adivinhar palavras em tempo real com recursos multijogador. Inspirado em"
+    },
+    "playAlone": {
+      "title": "Jogar Sozinho",
+      "description": "Experiência clássica do Wordle. Jogue palavras aleatórias ilimitadas no seu próprio ritmo.",
+      "button": "Jogar"
+    },
+    "joinRoom": {
+      "title": "Entrar em Sala",
+      "description": "Jogue com amigos em tempo real. Compita para ver quem descobre a palavra secreta primeiro.",
+      "button": "Entrar"
+    },
+    "hostRoom": {
+      "title": "Criar Sala",
+      "description": "Crie uma sala e convide amigos. Inicie uma partida multijogador e veja quem resolve primeiro.",
+      "button": "Criar"
+    },
+    "comingSoon": "Em breve..",
+    "footer": {
+      "builtBy": "Desenvolvido por",
+      "viewSource": "Ver código"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Idioma"
+  }
+}
